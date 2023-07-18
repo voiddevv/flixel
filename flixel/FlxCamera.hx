@@ -1251,14 +1251,14 @@ class FlxCamera extends FlxBasic
 			}
 		}
 
-		if (followLerp >= 60 / FlxG.updateFramerate)
+		if (followLerp >= 1)
 		{
 			scroll.copyFrom(_scrollTarget); // no easing
 		}
 		else
 		{
-			scroll.x += (_scrollTarget.x - scroll.x) * followLerp * FlxG.updateFramerate / 60;
-			scroll.y += (_scrollTarget.y - scroll.y) * followLerp * FlxG.updateFramerate / 60;
+			scroll.x += (_scrollTarget.x - scroll.x) * followLerp * (FlxG.elapsed * 60);
+			scroll.y += (_scrollTarget.y - scroll.y) * followLerp * (FlxG.elapsed * 60);
 		}
 	}
 

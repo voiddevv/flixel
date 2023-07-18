@@ -1,5 +1,4 @@
 package flixel;
-
 import openfl.display.Graphics;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.math.FlxPoint;
@@ -612,7 +611,7 @@ class FlxObject extends FlxBasic
 	 * Set this to `false` if you want to skip the automatic motion/movement stuff (see `updateMotion()`).
 	 * `FlxObject` and `FlxSprite` default to `true`. `FlxText`, `FlxTileblock` and `FlxTilemap` default to `false`.
 	 */
-	public var moves(default, set):Bool = true;
+	public var moves(default, set):Bool = false;
 
 	/**
 	 * Whether an object will move/alter position after a collision.
@@ -854,7 +853,6 @@ class FlxObject extends FlxBasic
 		_point = FlxDestroyUtil.put(_point);
 		_rect = FlxDestroyUtil.put(_rect);
 	}
-
 	/**
 	 * Override this function to update your class's position and appearance.
 	 * This is where most of your game rules and behavioral code will go.
